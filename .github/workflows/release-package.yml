@@ -53,6 +53,9 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: |
+          mkdir usingit
+          cd usingit
           npm install @jvizuetazivra/ghactions3-exercise-publish-package@1.0.1
+          ls
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
