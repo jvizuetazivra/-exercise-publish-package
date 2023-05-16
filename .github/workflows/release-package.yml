@@ -42,3 +42,17 @@ jobs:
         working-directory: sample-packages/npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  use-gpr:
+    needs: publish-gpr
+    runs-on: ubuntu-latest
+    permissions:
+      packages: read
+    steps:
+      - uses: actions/setup-node@2.5.1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+      - run: |
+          npm install @jvizuetazivra/ghactions3-exercise-publish-package@1.0.1
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
