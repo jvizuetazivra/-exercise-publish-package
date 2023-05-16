@@ -6,27 +6,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2.5.1
         with:
           node-version: 12
       - run: |
-          cd sample-packages/npm
           npm ci
-      - run: npm test
+          npm test
+        working-directory: sample-packages/npm
 
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    outputs:
+      semver: ${{ steps.gitversion.outputs.SemVer }}
+      
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - uses: actions/setup-node@v2.5.1
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: |
-          cd sample-packages/npm
           npm ci
-      - run: npm publish
+          npm publish
+        working-directory: sample-packages/npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
