@@ -48,7 +48,7 @@ jobs:
     permissions:
       packages: read
     steps:
-      - uses: actions/setup-node@2.5.1
+      - uses: actions/setup-node@v2.5.1
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
