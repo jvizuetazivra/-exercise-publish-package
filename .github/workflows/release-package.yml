@@ -56,6 +56,6 @@ jobs:
           mkdir usingit
           cd usingit
           npm install @jvizuetazivra/ghactions3-exercise-publish-package@1.0.1
-          ls
+          ls node_modules/
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
