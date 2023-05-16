@@ -1,5 +1,5 @@
 {
-  "name": "@jvizuetazivra/ghactions-exercise3-publish-package",
+  "name": "@jvizuetazivra/ghactions3-exercise-publish-package",
   "version": "1.0.1",
   "description": "This is just a demo to set up a package in minutes.",
   "main": "index.js",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jvizuetazivra/ghactions-exercise3-publish-package.git"
+    "url": "git+https://github.com/jvizuetazivra/ghactions3-exercise-publish-package.git"
   },
   "author": "JC Vizueta (@jvizuetazivra)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jvizuetazivra/ghactions-exercise3-publish-package/issues"
+    "url": "https://github.com/jvizuetazivra/ghactions3-exercise-publish-package/issues"
   },
-  "homepage": "https://github.com/jvizuetazivra/ghactions-exercise3-publish-package#readme"
+  "homepage": "https://github.com/jvizuetazivra/ghactions3-exercise-publish-package#readme"
 }
